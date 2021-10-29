@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <title>Cloud rental</title>
+</head>
+
+<body>
+    <div>
+    <div class="d-flex">
+        <div id="sidebar-container" class="bg-primary">
+            <div class="logo" id="encabezado">
+                <h4 class="text-light">Cloud rental</h4>
+            </div>
+            <div class="menu">
+                <a href="#encabezado" class="d-block text-light p-3"><i class="icon ion-md-folder lead"></i>Creacion de categorias</a>
+                <a href="#seccionCloud" class="d-block text-light p-3"><i class="icon ion-md-cloud lead"></i>Creacion de nubes</a>
+                <a href="#seccionClient" class="d-block text-light p-3"><i class="icon ion-md-person lead"></i>Registro de
+                    clientes</a>
+                <a href="#seccionReservation" class="d-block text-light p-3"><i class="icon ion-md-calendar lead"></i>Registro de
+                reservaciones</a>
+                <a href="#seccionMessage" class="d-block text-light p-3"><i class="icon ion-md-mail lead"></i>Registro de mensajes</a>
+                <a href="#seccionScore" class="d-block text-light p-3"><i class="icon ion-md-star lead"></i>Score</a>
+            </div>
+        </div>
+
+        <div>
+            <div  id="seccionCategory"class="secciones">
+                <div>
+                    <h4>Creacion de category</h4>
+                </div>
+                <div>
+                    <div class="row center">
+                        <div class="col-2">
+                            <label for="nameCategory">NAME</label>
+                            <input class="form-control form-control-lg" type="text" placeholder="#" id="nameCategory">
+                        </div>
+                        <div class="col-2">
+                            <label for="descriptionCategory">DESCRIPTION</label>
+                            <input class="form-control form-control-lg " type="text" placeholder="exaple" id="descriptionCategory">
+                        </div>
+                        <div class="center">
+                            <button type="button" class="btn btn-dark" onclick="consultarCategory()"
+                                id="btnReload">Reload</button>
+                            <button type="button" class="btn btn-dark" onclick="createCategory()"
+                                id="btnCreate">Create</button>
+                            <button type="button" class="btn btn-dark" onclick="updateCategory()"
+                                id="btnUpdate">Update</button>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>NAME</th>
+                                    <th>DESCRIPTION</th>
+                                    <th colspan="2">ACCION</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contenidoTablaCategory">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        <div  id="seccionCloud"class="secciones">
+            <div>
+                <h4>Creacion de nubes</h4>
+            </div>
+            <div>
+                <div class="row center">
+                    <div class="col-2">
+                        <label for="nameCloud">NAME</label>
+                        <input class="form-control form-control-lg " type="text" placeholder="exaple" id="nameCloud">
+                    </div>
+                    <div class="col-2">
+                        <label for="brandCloud">BRAND</label>
+                        <input class="form-control form-control-lg " type="text" placeholder="exaple" id="brandCloud">
+                    </div>
+                    <div class="col-2">
+                        <label for="yearCloud">YEAR</label>
+                        <input class="form-control form-control-lg " type="number" placeholder="exaple" id="yearCloud">
+                    </div>
+                    <div class="col-2">
+                        <label for="descriptionCloud">DESCRIPTION</label>
+                        <input class="form-control form-control-lg" type="text" placeholder="#" id="descriptionCloud">
+                    </div>
+                    <div class="col-2">
+                        <label for="categoryCloud">CATEGORY</label>
+                        <input class="form-control form-control-lg" type="number" placeholder="#" id="categoryCloud">
+                    </div>
+                    <div class="center">
+                        <button type="button" class="btn btn-dark" onclick="consultarCloud()"
+                            id="btnReload">Reload</button>
+                        <button type="button" class="btn btn-dark" onclick="createCloud()"
+                            id="btnCreate">Create</button>
+                        <button type="button" class="btn btn-dark" onclick="updateCloud()"
+                            id="btnUpdate">Update</button>
+                    </div>
+                </div>
+                <div>
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>NAME</th>
+                                <th>BRAND</th>
+                                <th>YEAR</th>
+                                <th>DESCRIPTION</th>
+                                <th colspan="2">ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenidoTablaCloud">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="seccionClient" class="secciones">
+            <div>
+                <h4>Registro de clientes</h4>
+            </div>
+            <div>
+                <div class="row center">
+                    <div class="col-2">
+                        <label for="emailClient">EMAIL</label>
+                        <input class="form-control form-control-lg" type="email" placeholder="example@email.com"
+                            id="emailClient">
+                    </div>
+                    <div class="col-2">
+                        <label for="passwordClient">PASSWORD</label>
+                        <input class="form-control form-control-lg" type="text" placeholder="*********"
+                            id="passwordClient">
+                    </div>
+                    <div class="col-2"> 
+                        <label for="nameClient">NAME</label>
+                        <input class="form-control form-control-lg " type="text" placeholder="exaple" id="nameClient">
+                    </div>
+                    <div class="col-2">
+                        <label for="ageClient">AGE</label>
+                        <input class="form-control form-control-lg" type="number" placeholder="#" id="ageClient">
+                    </div>
+                    
+                    <div class="center">
+                        <button type="button" class="btn btn-dark" onclick="consultarClient()"
+                            id="btnReload">Reload</button>
+                        <button type="button" class="btn btn-dark" onclick="createClient()"
+                            id="btnCreate">Create</button>
+                        <button type="button" class="btn btn-dark" onclick="updateClient()"
+                            id="btnUpdate">Update</button>
+                    </div>
+                </div>
+                <div>
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>EMAIL</th>
+                                <th>PASSWORD</th>
+                                <th>NAME</th>
+                                <th>AGE</th>
+                                <th colspan="2">ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenidoTablaClient">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="seccionReservation" class="secciones">
+            <div>
+                <h4>Reservaciones</h4>
+            </div>
+            <div>
+                <div class="row center">
+                    <div class="col-2">
+                        <label for="starDateReservation">START DATE</label>
+                        <input class="form-control form-control-lg" type="date" placeholder="MM/DD/YYYY"
+                            id="starDateReservation">
+                    </div>
+                    <div class="col-2">
+                        <label for="devolutionDateReservation">DEVOLUTION DATE</label>
+                        <input class="form-control form-control-lg" type="date" placeholder="MM/DD/YYYY"
+                            id="devolutionDateReservation">
+                    </div>
+                    <div class="col-2"> 
+                        <label for="cloudReservation">CLOUD</label>
+                        <input class="form-control form-control-lg " type="number" placeholder="#" id="cloudReservation">
+                    </div>
+                    <div class="col-2">
+                        <label for="clientReservation">CLIENT</label>
+                        <input class="form-control form-control-lg" type="number" placeholder="#" id="clientReservation">
+                    </div>
+                    <div class="col-2">
+                        <label for="statusReservation">STATUS</label>
+                        <input class="form-control form-control-lg" type="text" placeholder=""
+                            id="statusReservation">
+                    </div>
+                    
+                    <div class="center">
+                        <button type="button" class="btn btn-dark" onclick="consultarReservation()"
+                            id="btnReload">Reload</button>
+                        <button type="button" class="btn btn-dark" onclick="createReservation()"
+                            id="btnCreate">Create</button>
+                        <button type="button" class="btn btn-dark" onclick="updateReservation()"
+                            id="btnUpdate">Update</button>
+                    </div>
+                </div>
+                <div>
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>START DATE</th>
+                                <th>DEVOLUTION DATE</th>
+                                <th>CLOUD</th>
+                                <th>CLIENT</th>
+                                <th>STATUS</th>
+                                <th colspan="2">ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenidoTablaReservation">
+                        </tbody>    
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="seccionMessage"class="secciones">
+            <div>
+                <h4>Registro de mensajes</h4>
+            </div>
+            <div>
+                <div class="row center">
+                    <div class="col-2">
+                        <label for="messageText">MESSAGE TEXT</label>
+                        <input class="form-control form-control-lg " type="text" placeholder="exaple" id="messagetext">
+                    </div>
+                    <div class="col-2">
+                        <label for="cloudMessage">CLOUD</label>
+                        <input class="form-control form-control-lg " type="number" placeholder="exaple" id="cloudMessage">
+                    </div>
+                    <div class="col-2">
+                        <label for="clientMessage">CLIENT</label>
+                        <input class="form-control form-control-lg " type="number" placeholder="exaple" id="clientMessage">
+                    </div>
+                    
+                    <div class="center">
+                        <button type="button" class="btn btn-dark" onclick="consultarMessage()"
+                            id="btnReload">Reload</button>
+                        <button type="button" class="btn btn-dark" onclick="createMessage()"
+                            id="btnCreate">Create</button>
+                        <button type="button" class="btn btn-dark" onclick="updateMessage()"
+                            id="btnUpdate">Update</button>
+                    </div>
+                </div>
+                <div>
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>MESSAGUE TEXT</th>
+                                <th>CLOUD</th>
+                                <th>CLIENT</th>
+                                <th colspan="2">ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenidoTablaMessage">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="seccionScore"class="secciones">
+            <div>
+                <h4>Score</h4>
+            </div>
+            <div>
+                <div class="row center">
+                    <div class="col-2">
+                        <label for="messageText">MESSAGE TEXT</label>
+                        <input class="form-control form-control-lg " type="text" placeholder="exaple" id="messagetext">
+                    </div>
+                    <div class="col-2">
+                        <label for="cloudScore">CLOUD</label>
+                        <input class="form-control form-control-lg " type="number" placeholder="exaple" id="cloudScore">
+                    </div>
+                    <div class="col-2">
+                        <label for="clientScore">CLIENT</label>
+                        <input class="form-control form-control-lg " type="number" placeholder="exaple" id="clientScore">
+                    </div>
+                    
+                    <div class="center">
+                        <button type="button" class="btn btn-dark" onclick="consultarScore()"
+                            id="btnReload">Reload</button>
+                        <button type="button" class="btn btn-dark" onclick="createScore()"
+                            id="btnCreate">Create</button>
+                        <button type="button" class="btn btn-dark" onclick="updateScore()"
+                            id="btnUpdate">Update</button>
+                    </div>
+                </div>
+                <div>
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>MESSAGUE TEXT</th>
+                                <th>CLOUD</th>
+                                <th>CLIENT</th>
+                                <th colspan="2">ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenidoTablaScore">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="javascript/app.js"></script>
+
+</body>
+
+</html>

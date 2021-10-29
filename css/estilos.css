@@ -1,0 +1,172 @@
+:root{
+    --primary: #111b54;
+    --light: #ffffff;
+    --grey: #efefef;
+
+}
+
+
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    background-color:#fcbf49;
+    
+}
+i{
+    margin: 10px;
+}
+
+h4{
+    font-weight: bold;
+    margin: 10px 20px;    
+}
+
+body{
+    overflow: hidden;
+    font-family: 'Mulish', 'sans-serif';
+    font-weight: 300;
+    color: var(--primary);
+    background-color: #e9ecef;
+}
+
+.bg-primary{background-color: var(--primary) !important;}
+
+#sidebar-container{
+    min-height: 100vh;
+}
+
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+    
+}
+#sidebar-container .menu{
+    width: 16rem;
+    position: sticky;
+    top: 0;
+    z-index: 20; 
+    
+}
+
+#content{
+    overflow: auto;
+    height: 100%;
+    padding-bottom: 5rem;
+}
+
+.secciones{
+    border: 1px solid #dee2e6;
+    width: 111%;
+    height: 400px;
+    margin: 30px 20px;
+    overflow-y: scroll; 
+    overflow-x:hidden;
+    background-color: white
+}
+div{
+    margin: 0px;
+}
+
+.scrollbar{
+    overflow-y: scroll;
+}
+
+.table-dark {
+    --bs-table-bg: var(--primary) ; 
+    --bs-table-striped-bg: #2c3034;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #373b3e;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #323539;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: none;
+}
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    /* --bs-table-hover-bg: rgba(0, 0, 0, 0.075); */
+    width: 99%;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    vertical-align: top;
+    margin: 8px;
+    border-color: #dee2e6;
+    text-align:center;      
+}
+
+
+
+
+table thead tr th{
+    
+    position: sticky;
+    top: 0;
+    z-index: 20;   
+}
+
+td{
+    color:  black;
+}
+    
+.button{
+    background-color: var(--primary);
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: 1px solid transparent;       
+}
+
+.accion{
+    padding: 8px;
+}
+
+.button:hover{
+    background-color: #d62828;
+}
+
+
+button i {
+    margin: 0px;
+    color: var(--light);
+}
+
+.btn-dark{
+    background-color: var(--primary);
+    border: 1px solid transparent;
+    margin: 10px;
+}
+
+.btn-dark:hover{
+    background-color: #d62828;
+    border-color: #d62828;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.form-control-lg {
+    min-height: calc(1.5em + 1rem + 2px);
+    padding: .5rem 1rem;
+    font-size: 14px;
+    border-radius: .3rem;
+}
+
+
+
+label{
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 5px;
+}
